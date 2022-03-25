@@ -16,9 +16,7 @@ html{
 }
 .mainHomePage h4{
     color: #A7233A;
-    animation-name: introductionHomeText;
-    animation-duration: 3s;
-    animation-fill-mode: forwards;
+    font-size: 40px;
 }
 .logo{
     color: #A7233A;
@@ -93,9 +91,6 @@ html{
     .mainHomePage h4{
         color: #A7233A;
         font-size: 40px;
-        animation-name: introductionHomeTextMobile;
-        animation-duration: 5s;
-        animation-fill-mode: forwards;
     }
     .navBarList{
         position: absolute;
@@ -140,24 +135,6 @@ html{
     to{
         opacity: 1;
         transform: translateX(0px);
-    }
-}
-@keyframes introductionHomeText{
-    from{
-        font-size: 20px;
-        opacity: 0;
-    }
-    to{
-        font-size: 40px;
-        opacity: 1;
-    }
-}
-@keyframes introductionHomeTextMobile{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
     }
 }
 .toggle .line1{
