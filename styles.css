@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+html{
+    background-color: #132036;
+}
+.mainHomePage{
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.mainHomePage h4{
+    color: #A7233A;
+    animation-name: introductionHomeText;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+.logo{
+    color: #A7233A;
+    font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 22px;
+    cursor: pointer;
+}
+.navBar{
+    position: relative;
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #132036;
+    border-bottom: solid;
+    border-color: #A7233A;
+}
+.navBarList{
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+.navBarList a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #A7233A;
+    padding: 15px;
+    border: hidden;
+    border-radius: 100px;
+    transition: 0.3s ease-out;
+}
+.navBarList li{
+    list-style: none;
+}
+.navBarList a:hover{
+    border: solid;
+    border-width: 1px;
+    border-color: #A7233A;
+    border-radius: 100px;
+    transition: 0.5s ease-in;
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color:#A7233A;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+@media screen and (max-width:1024px){
+    .navBarList{
+        width: 60%;
+    }
+}
+@media screen and (max-width:768px){
+    body{
+        overflow-x: hidden;
+    }
+    .mainHomePage{
+        width: 100vw;
+        height: 80vh;
+        display: flex;
+        margin-left: 30px;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .mainHomePage h4{
+        color: #A7233A;
+        font-size: 40px;
+        animation-name: introductionHomeTextMobile;
+        animation-duration: 5s;
+        animation-fill-mode: forwards;
+    }
+    .navBarList{
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 10vh;
+        background-color: #132036;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+    .logo{
+        cursor: pointer;
+    }
+    .navBarList a:hover{
+        border: solid;
+        padding: 15px;
+        border-width: 1px;
+        border-color: #A7233A;
+        border-radius: 100px;
+        transition: 0.3s ease-in;
+    }
+    .navBarList li{
+        opacity: 0;
+    }
+    .burger{
+        display: block;
+        transition: 0.4s;
+    }
+}
+.nav-active{
+    transform: translateX(0%);
+}
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes introductionHomeText{
+    from{
+        font-size: 20px;
+        opacity: 0;
+    }
+    to{
+        font-size: 40px;
+        opacity: 1;
+    }
+}
+@keyframes introductionHomeTextMobile{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+.toggle .line2{
+    opacity: 0;
+}
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
