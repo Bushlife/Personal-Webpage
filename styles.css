@@ -16,7 +16,9 @@ html{
 }
 .mainHomePage h4{
     color: #A7233A;
-    font-size: 40px;
+    animation-name: introTextappear;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
 }
 .logo{
     color: #A7233A;
@@ -25,6 +27,11 @@ html{
     text-transform: uppercase;
     font-size: 22px;
     cursor: pointer;
+}
+.logo:hover{
+    animation: colorRotate 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 .navBar{
     position: relative;
@@ -35,6 +42,7 @@ html{
     background-color: #132036;
     border-bottom: solid;
     border-color: #A7233A;
+    cursor: pointer;
 }
 .navBarList{
     display: flex;
@@ -48,17 +56,17 @@ html{
     padding: 15px;
     border: hidden;
     border-radius: 100px;
-    transition: 0.3s ease-out;
+    transition: 0.3s ease-in;
 }
 .navBarList li{
     list-style: none;
 }
 .navBarList a:hover{
     border: solid;
-    border-width: 1px;
+    border-width: 3px;
     border-color: #A7233A;
     border-radius: 100px;
-    transition: 0.5s ease-in;
+    transition: 0.3s ease-in;
 }
 .burger{
     display: none;
@@ -91,6 +99,9 @@ html{
     .mainHomePage h4{
         color: #A7233A;
         font-size: 40px;
+        animation-name: introTextMobile;
+        animation-duration: 5s;
+        animation-fill-mode: forwards;
     }
     .navBarList{
         position: absolute;
@@ -127,6 +138,9 @@ html{
 .nav-active{
     transform: translateX(0%);
 }
+.removeMainText .mainText{
+    display: none;
+}
 @keyframes navLinkFade{
     from{
         opacity: 0;
@@ -135,6 +149,32 @@ html{
     to{
         opacity: 1;
         transform: translateX(0px);
+    }
+}
+@keyframes introTextappear{
+    from{
+        opacity: 0;
+        font-size: 20px;
+    }
+    to{
+        opacity: 1;
+        font-size: 40px;
+    }
+}
+@keyframes introTextMobile{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+@keyframes colorRotate{
+    from{
+        filter: hue-rotate(0deg);
+    }
+    to{
+        filter: hue-rotate(360deg);
     }
 }
 .toggle .line1{

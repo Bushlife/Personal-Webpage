@@ -2,9 +2,10 @@ const navSlide = () => {
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.navBarList');
     const navLinks= document.querySelectorAll('.navBarList li');
-
+    const mainPage = document.querySelector('.mainHomePage');
 burger.addEventListener('click', () =>{
     nav.classList.toggle('nav-active')
+    mainPage.classList.toggle('removeMainText')
     navLinks.forEach((link, index) => {
         if(link.style.animation){
             link.style.animation = ""
